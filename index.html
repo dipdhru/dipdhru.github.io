@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dipanshu Singh · AI Engineer & Data Scientist</title>
+<meta name="description" content="Dipanshu Singh, AI Engineer and Data Scientist in Berlin. LLM agents, RAG systems and applied machine learning, built end to end and measured honestly.">
+<meta property="og:title" content="Dipanshu Singh · AI Engineer & Data Scientist">
+<meta property="og:description" content="LLM agents, RAG systems and applied ML, built end to end and measured honestly. Berlin.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dipdhru.github.io/">
+<meta name="theme-color" content="#0c0d10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c0d10'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='%23f2a33a'%3EDS%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0c0d10;
+    --surface: #14161b;
+    --surface-2: #1b1e25;
+    --line: #262a33;
+    --text: #e8e6e1;
+    --muted: #9a9890;
+    --faint: #6b6a65;
+    --accent: #f2a33a;
+    --accent-soft: rgba(242, 163, 58, 0.12);
+    --ok: #7fc8a9;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    --max: 1080px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 17px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  .label {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .skip { position: absolute; left: -999px; }
+  .skip:focus { left: 16px; top: 16px; background: var(--accent); color: #000; padding: 8px 12px; z-index: 10; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  /* Nav */
+  header.nav {
+    position: sticky; top: 0; z-index: 5;
+    background: rgba(12, 13, 16, 0.82); backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  header.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .mark { font-family: var(--mono); font-weight: 700; text-decoration: none; letter-spacing: 0.02em; }
+  .mark span { color: var(--accent); }
+  nav ul { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
+  nav a { text-decoration: none; color: var(--muted); font-size: 15px; }
+  nav a:hover { color: var(--text); }
+
+  /* Hero */
+  .hero { padding: 96px 0 72px; }
+  .hero h1 {
+    font-size: clamp(40px, 7vw, 76px); line-height: 1.04; letter-spacing: -0.03em;
+    margin: 18px 0 24px; font-weight: 700;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .lede { font-size: clamp(18px, 2.2vw, 21px); color: var(--muted); max-width: 640px; margin: 0 0 32px; }
+  .lede strong { color: var(--text); font-weight: 600; }
+  .status {
+    display: inline-flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 13px;
+    color: var(--ok); border: 1px solid rgba(127, 200, 169, 0.3); border-radius: 999px; padding: 6px 14px;
+  }
+  .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 4px rgba(127, 200, 169, 0.15); }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 10px;
+    text-decoration: none; font-weight: 600; font-size: 15px; border: 1px solid var(--line);
+    transition: border-color .15s, background .15s;
+  }
+  .btn:hover { border-color: var(--muted); }
+  .btn.primary { background: var(--accent); color: #17120a; border-color: var(--accent); }
+  .btn.primary:hover { background: #f6b55c; }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .stat { padding: 28px 20px 28px 0; }
+  .stat + .stat { padding-left: 20px; border-left: 1px solid var(--line); }
+  .stat b { display: block; font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; line-height: 1.1; }
+  .stat span { display: block; margin-top: 6px; color: var(--muted); font-size: 14px; line-height: 1.4; }
+
+  section { padding: 96px 0 0; }
+  h2 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -0.02em; line-height: 1.15; margin: 14px 0 16px; }
+  .intro { color: var(--muted); max-width: 640px; margin: 0 0 40px; }
+
+  /* Pipeline */
+  .pipeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+  .step { background: var(--surface); border: 1px solid var(--line); padding: 24px 22px; position: relative; }
+  .step:first-child { border-radius: 14px 0 0 14px; }
+  .step:last-child { border-radius: 0 14px 14px 0; }
+  .step + .step { border-left: none; }
+  .step .n { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+  .step h3 { margin: 8px 0 6px; font-size: 19px; }
+  .step p { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
+  .step .tools { font-family: var(--mono); font-size: 12px; color: var(--accent); line-height: 1.7; }
+  .step:not(:last-child)::after {
+    content: "→"; position: absolute; right: -11px; top: 50%; transform: translateY(-50%);
+    width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1px solid var(--line);
+    display: grid; place-items: center; font-size: 12px; color: var(--accent); z-index: 1;
+  }
+  .loop { margin-top: 14px; font-family: var(--mono); font-size: 13px; color: var(--faint); text-align: center; }
+  .loop b { color: var(--muted); font-weight: 500; }
+
+  /* Projects */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .filters button {
+    font: inherit; font-size: 14px; color: var(--muted); background: transparent; cursor: pointer;
+    border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px;
+  }
+  .filters button[aria-pressed="true"] { color: #17120a; background: var(--accent); border-color: var(--accent); }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 26px;
+    display: flex; flex-direction: column; transition: border-color .15s, transform .15s;
+  }
+  .card:hover { border-color: #3a3f4a; transform: translateY(-2px); }
+  .card[hidden] { display: none; }
+  .card .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); }
+  .live { font-family: var(--mono); font-size: 11px; color: var(--ok); border: 1px solid rgba(127, 200, 169, 0.3); border-radius: 999px; padding: 2px 9px; }
+  .card h3 { font-size: 21px; margin: 12px 0 8px; letter-spacing: -0.01em; }
+  .card p { color: var(--muted); margin: 0 0 16px; font-size: 15.5px; }
+  .result {
+    background: var(--accent-soft); border-left: 2px solid var(--accent); border-radius: 0 8px 8px 0;
+    padding: 10px 14px; font-size: 14.5px; margin: 0 0 18px;
+  }
+  .result b { color: var(--accent); }
+  .stack { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px; padding: 0; list-style: none; }
+  .stack li { font-family: var(--mono); font-size: 12px; color: var(--muted); background: var(--surface-2); border-radius: 6px; padding: 3px 8px; }
+  .links { margin-top: auto; display: flex; gap: 18px; font-size: 15px; font-weight: 600; }
+  .links a { text-decoration: none; color: var(--text); }
+  .links a:hover { color: var(--accent); }
+  .links a.demo { color: var(--accent); }
+
+  /* Skills + experience */
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  dl.skills { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 14px 24px; }
+  dl.skills dt { font-family: var(--mono); font-size: 13px; color: var(--faint); padding-top: 2px; }
+  dl.skills dd { margin: 0; }
+  ul.points { margin: 0; padding: 0; list-style: none; }
+  ul.points li { padding: 14px 0; border-top: 1px solid var(--line); color: var(--muted); }
+  ul.points li:first-child { border-top: none; padding-top: 0; }
+  ul.points b { color: var(--text); font-weight: 600; }
+
+  /* Contact */
+  .contact {
+    margin-top: 96px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+    padding: 48px; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap;
+  }
+  .contact h2 { margin: 10px 0 8px; }
+  .contact p { margin: 0; color: var(--muted); }
+  footer { padding: 40px 0 56px; color: var(--faint); font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer a { color: var(--muted); }
+
+  @media (max-width: 860px) {
+    .pipeline { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .step, .step:first-child, .step:last-child { border-radius: 14px; border-left: 1px solid var(--line); }
+    .step::after { display: none; }
+    .grid, .two { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(3) { padding-left: 0; border-left: none; }
+    .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    nav ul { gap: 14px; }
+    nav li.hide-sm { display: none; }
+    .hero { padding: 64px 0 56px; }
+    .pipeline { grid-template-columns: 1fr; }
+    .stat { padding: 20px 12px 20px 0; }
+    .stat + .stat { padding-left: 12px; }
+    .card { padding: 22px; }
+    .contact { padding: 32px 22px; }
+    dl.skills { grid-template-columns: 1fr; gap: 4px; }
+    dl.skills dd { margin-bottom: 12px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .card, .btn { transition: none; }
+    .card:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Dipanshu Singh, back to top">dipanshu<span>.</span>singh</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li class="hide-sm"><a href="#how">How I work</a></li>
+        <li class="hide-sm"><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <section class="hero" id="top" style="padding-top:96px">
+      <span class="status">Open to Junior ML Engineer &amp; Data Scientist roles · Berlin / EU</span>
+      <h1>I build AI systems<br>and <em>measure</em> them.</h1>
+      <p class="lede">
+        <strong>AI Engineer &amp; Data Scientist</strong> with an MSc in Data Science and AI.
+        I take projects from messy data to deployed apps: LLM agents, retrieval-augmented
+        chatbots and forecasting models, each with tests, CI and an honest evaluation.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See projects</a>
+        <a class="btn" href="https://github.com/dipdhru">GitHub ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/dipanshu-s-b94384174/">LinkedIn ↗</a>
+      </div>
+    </section>
+
+    <div class="stats" role="list">
+      <div class="stat" role="listitem"><b>2.5+ yrs</b><span>industry experience</span></div>
+      <div class="stat" role="listitem"><b>25+</b><span>enterprise clients served with BI dashboards</span></div>
+      <div class="stat" role="listitem"><b>+15%</b><span>revenue uplift I helped drive</span></div>
+      <div class="stat" role="listitem"><b>3</b><span>live demos you can try now</span></div>
+    </div>
+
+    <section id="how" aria-labelledby="how-h">
+      <span class="label">How I work</span>
+      <h2 id="how-h">Every project follows the same loop.</h2>
+      <p class="intro">A model is only as good as the evidence behind it. I build the evaluation before I trust the result, and ship it where people can try it.</p>
+      <div class="pipeline">
+        <div class="step">
+          <span class="n">01</span>
+          <h3>Data</h3>
+          <p>Clean, version and split it so the test set never leaks into training.</p>
+          <div class="tools">pandas · SQL · Open-Meteo · MedQuAD</div>
+        </div>
+        <div class="step">
+          <span class="n">02</span>
+          <h3>Model</h3>
+          <p>Start from a simple baseline, then earn every bit of added complexity.</p>
+          <div class="tools">scikit-learn · Keras · Prophet · e5 · LLMs</div>
+        </div>
+        <div class="step">
+          <span class="n">03</span>
+          <h3>Evaluate</h3>
+          <p>Held-out benchmarks, confidence intervals and failure cases, reported as measured.</p>
+          <div class="tools">rolling-origin · hit@k · bootstrap CI</div>
+        </div>
+        <div class="step">
+          <span class="n">04</span>
+          <h3>Ship</h3>
+          <p>Tested code, CI on every push, and a demo anyone can open.</p>
+          <div class="tools">pytest · GitHub Actions · Streamlit · Docker</div>
+        </div>
+      </div>
+      <p class="loop">↺ <b>measure, learn, iterate</b></p>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-h">
+      <span class="label">Selected work</span>
+      <h2 id="projects-h">Projects</h2>
+      <p class="intro">Six projects across AI, machine learning and data science. Each links to its code; three run live.</p>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="ai" aria-pressed="false">AI &amp; LLMs</button>
+        <button type="button" data-filter="ml" aria-pressed="false">Machine learning</button>
+        <button type="button" data-filter="ds" aria-pressed="false">Data science</button>
+      </div>
+
+      <div class="grid">
+        <article class="card" data-cat="ai">
+          <div class="top"><span class="tag">RAG · Healthcare</span><span class="live">● live</span></div>
+          <h3>Medical RAG Chatbot</h3>
+          <p>Answers health questions from 16,407 NIH Q&amp;A pairs, cites its sources, and refuses questions outside its knowledge base.</p>
+          <p class="result">Right condition in the top 3 for <b>86%</b> of lay-language test questions (TF-IDF baseline: 43%); refuses <b>17 of 20</b> off-topic ones.</p>
+          <ul class="stack"><li>e5-base</li><li>FAISS</li><li>Groq LLM</li><li>Streamlit</li><li>pytest + CI</li></ul>
+          <div class="links">
+            <a class="demo" href="https://medicalchatbotrag-dipdhru.streamlit.app">Try it ↗</a>
+            <a href="https://github.com/dipdhru/medical_chatbot_rag">Code ↗</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="ai">
+          <div class="top"><span class="tag">LLM agent · Text-to-SQL</span></div>
+          <h3>DataAnalyst AI Agent</h3>
+          <p>Connect a database or upload CSV/Excel, ask in plain English, and get SQL, tables and charts back.</p>
+          <p class="result">Optional <b>double-check mode</b> flags when two answers disagree, measured on a public Text-to-SQL benchmark.</p>
+          <ul class="stack"><li>LLM agents</li><li>SQL</li><li>Docker</li><li>uv</li><li>CI</li></ul>
+          <div class="links">
+            <a href="https://github.com/dipdhru/DataAnalyst_AI_Agent">Code ↗</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="ml">
+          <div class="top"><span class="tag">Time series · Deep learning</span></div>
+          <h3>Berlin Temperature Forecasting</h3>
+          <p>7-day forecasts comparing a Bidirectional LSTM, a Transformer and Prophet against naive baselines, under leakage-controlled rolling-origin evaluation.</p>
+          <p class="result">BiLSTM best at <b>3.10 °C</b> MAE over 44 weekly forecasts, but for tomorrow alone, "same as today" still wins.</p>
+          <ul class="stack"><li>TensorFlow/Keras</li><li>Prophet</li><li>Open-Meteo</li><li>19 tests + CI</li></ul>
+          <div class="links">
+            <a href="https://github.com/dipdhru/berlin-temperature-forecasting">Code ↗</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="ai">
+          <div class="top"><span class="tag">Text-to-SQL · Retrieval</span></div>
+          <h3>Olist Analytics Agent</h3>
+          <p>A Text-to-SQL agent over the Olist Brazilian e-commerce dataset, with retrieval, evaluation and a Streamlit UI.</p>
+          <ul class="stack"><li>LLMs</li><li>SQL</li><li>Retrieval</li><li>Streamlit</li></ul>
+          <div class="links">
+            <a href="https://github.com/dipdhru/olist-ai-agent">Code ↗</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="ds">
+          <div class="top"><span class="tag">NLP · Labour market</span><span class="live">● live</span></div>
+          <h3>AI Job Automation Risk</h3>
+          <p>NLP analysis of 1,000+ job descriptions, scoring how exposed each role's tasks and skills are to AI automation.</p>
+          <ul class="stack"><li>spaCy</li><li>NLP</li><li>Streamlit</li></ul>
+          <div class="links">
+            <a class="demo" href="https://ai-job-automation-risk-nlp.streamlit.app/">Try it ↗</a>
+            <a href="https://github.com/dipdhru/ai-job-automation-risk-nlp">Code ↗</a>
+          </div>
+        </article>
+
+        <article class="card" data-cat="ml">
+          <div class="top"><span class="tag">Regression</span><span class="live">● live</span></div>
+          <h3>House Price Predictor</h3>
+          <p>Predicts house prices in major Indian cities with an XGBoost regression pipeline behind a Streamlit front end.</p>
+          <ul class="stack"><li>XGBoost</li><li>scikit-learn</li><li>Streamlit</li></ul>
+          <div class="links">
+            <a class="demo" href="https://housepricepredictionmlmodal.streamlit.app/">Try it ↗</a>
+            <a href="https://github.com/dipdhru/house_price_prediction_ml_modal">Code ↗</a>
+          </div>
+        </article>
+      </div>
+      <p class="intro" style="margin:24px 0 0">More on <a href="https://github.com/dipdhru?tab=repositories">GitHub</a>, including multi-modal music genre classification and PM2.5 forecasting with LSTMs.</p>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-h">
+      <span class="label">Skills &amp; background</span>
+      <h2 id="skills-h">Comfortable across business and engineering.</h2>
+      <div class="two" style="margin-top:32px">
+        <dl class="skills">
+          <dt>Languages</dt><dd>Python, SQL</dd>
+          <dt>ML</dt><dd>scikit-learn, TensorFlow/Keras, Prophet, XGBoost</dd>
+          <dt>NLP &amp; LLMs</dt><dd>RAG, embeddings, FAISS, LangChain, spaCy, agents</dd>
+          <dt>Shipping</dt><dd>FastAPI, Streamlit, Docker, GitHub Actions, pytest</dd>
+          <dt>Analytics</dt><dd>pandas, Tableau, Power BI, Matplotlib</dd>
+        </dl>
+        <ul class="points">
+          <li><b>MSc Data Science and AI</b>, Berlin.</li>
+          <li><b>2.5+ years in industry</b>, where I increased product adoption by 10% quarter on quarter and helped drive a 15% revenue uplift.</li>
+          <li><b>BI dashboards for 25+ enterprise clients</b>, including Acer, Apple, Godrej and Reliance.</li>
+          <li><b>Learning now:</b> MLOps, model deployment and LLM evaluation.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="contact" id="contact">
+      <div>
+        <span class="label">Contact</span>
+        <h2>Let's talk.</h2>
+        <p>Hiring for a junior ML or data science role in Berlin or the EU? I'd like to hear from you.</p>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="mailto:dipdhrusingh@gmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/dipanshu-s-b94384174/">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <footer>
+      <span>© <span id="year">2026</span> Dipanshu Singh · Berlin</span>
+      <span><a href="https://github.com/dipdhru/dipdhru.github.io">Source</a> · No cookies, no trackers</span>
+    </footer>
+  </div>
+</main>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  const buttons = document.querySelectorAll(".filters button");
+  const cards = document.querySelectorAll(".card");
+  buttons.forEach((btn) => btn.addEventListener("click", () => {
+    buttons.forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+    const f = btn.dataset.filter;
+    cards.forEach((c) => { c.hidden = f !== "all" && c.dataset.cat !== f; });
+  }));
+</script>
+</body>
+</html>
