@@ -9,6 +9,8 @@
 <meta property="og:description" content="LLM agents, RAG systems and applied ML, built end to end and measured honestly. Berlin.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dipdhru.github.io/">
+<meta property="og:image" content="https://dipdhru.github.io/assets/dipanshu.jpg">
+<meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#0a0b1e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0b1e'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' text-anchor='middle' fill='%23ffd23f'%3EDS%3C/text%3E%3C/svg%3E">
 <style>
@@ -70,6 +72,20 @@
       radial-gradient(closest-side at 30% 40%, rgba(90, 169, 255, 0.20), transparent),
       radial-gradient(closest-side at 70% 60%, rgba(178, 141, 255, 0.22), transparent);
     filter: blur(20px); pointer-events: none;
+  }
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 56px; }
+  .photo { margin: 0; position: relative; width: 300px; aspect-ratio: 1; }
+  .photo::before {
+    content: ""; position: absolute; inset: -6px; border-radius: 50%;
+    background: conic-gradient(from 200deg, var(--accent), var(--blue), var(--purple), var(--accent));
+  }
+  .photo::after {
+    content: ""; position: absolute; inset: -30px; border-radius: 50%; z-index: -1;
+    background: radial-gradient(closest-side, rgba(178, 141, 255, 0.35), transparent);
+  }
+  .photo img {
+    position: relative; display: block; width: 100%; height: 100%; object-fit: cover;
+    border-radius: 50%; border: 6px solid var(--bg);
   }
   .hero h1 {
     font-size: clamp(40px, 7vw, 76px); line-height: 1.04; letter-spacing: -0.03em;
@@ -188,6 +204,10 @@
   .intro a { color: var(--blue); }
 
   @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 28px; }
+    .photo { order: -1; width: 132px; }
+    .photo::before { inset: -4px; }
+    .photo img { border-width: 4px; }
     .pipeline { grid-template-columns: 1fr 1fr; gap: 12px; }
     .step, .step:first-child, .step:last-child { border-radius: 14px; border-left: 1px solid var(--line); }
     .step::after { display: none; }
@@ -236,7 +256,8 @@
 
 <main id="main">
   <div class="wrap">
-    <section class="hero" id="top" style="padding-top:96px">
+    <section class="hero" id="top">
+      <div class="hero-text">
       <span class="status">Open to Junior ML Engineer &amp; Data Scientist roles · Berlin / EU</span>
       <h1>I build AI systems<br>and <em>measure</em> them.</h1>
       <p class="lede">
@@ -249,6 +270,10 @@
         <a class="btn" href="https://github.com/dipdhru">GitHub ↗</a>
         <a class="btn" href="https://www.linkedin.com/in/dipanshu-s-b94384174/">LinkedIn ↗</a>
       </div>
+      </div>
+      <figure class="photo">
+        <img src="assets/dipanshu.jpg" width="440" height="440" alt="Portrait of Dipanshu Singh" fetchpriority="high">
+      </figure>
     </section>
 
     <div class="stats" role="list">
